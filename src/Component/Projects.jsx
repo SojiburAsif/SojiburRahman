@@ -1,151 +1,199 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Autoplay, Navigation } from 'swiper/modules';
+import React, { useState } from "react";
+import { FaReact, FaNodeJs } from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiMongodb,
+  SiFirebase,
+  SiJsonwebtokens,
+  SiStripe,
+} from "react-icons/si";
 
-import { FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiFirebase, SiJsonwebtokens } from 'react-icons/si';
+import Project1 from "./Projects/Project1";
+import Project2 from "./Projects/Project2";
+import Project3 from "./Projects/Project3";
+
+import project1Img from "../../public/Project-1/img1.png";
+import project2Img from "../../public/Project-2/img11.png";
+import project3Img from "../../public/project-3/img1.png";
+import { FiFolder } from "react-icons/fi";
+
+const iconMap = {
+  React: <FaReact className="inline-block text-blue-400 mr-1" size={14} />,
+  "Tailwind CSS": <SiTailwindcss className="inline-block text-teal-400 mr-1" size={14} />,
+  "Node.js": <FaNodeJs className="inline-block text-green-500 mr-1" size={14} />,
+  MongoDB: <SiMongodb className="inline-block text-green-600 mr-1" size={14} />,
+  Firebase: <SiFirebase className="inline-block text-yellow-400 mr-1" size={14} />,
+  JWT: <SiJsonwebtokens className="inline-block text-purple-400 mr-1" size={14} />,
+  Stripe: <SiStripe className="inline-block text-purple-600 mr-1" size={14} />,
+};
+
+const projects = [
+  {
+    title: "Workfleed - Employee Management System",
+    subtitle: "Role-based Employee Management System",
+    banner: project1Img,
+    component: Project1,
+    liveLink: "https://your-live-link.com",
+    repoLink: "https://github.com/your-repo",
+    description:
+      "Workfleed is a role-based employee management system with dashboards for Employees, HR, and Admin. It supports payroll handling, real-time updates, and task tracking.",
+    features: [
+      "Role-based Dashboard (Employee, HR, Admin)",
+      "Task & Work Sheet Management",
+      "Payroll & Salary Approval System",
+      "Email/Google Authentication",
+    ],
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "MongoDB",
+      "Firebase",
+      "JWT",
+      "Stripe",
+    ],
+  },
+  {
+    title: "Service Sharing Web Application",
+    subtitle: "Add, manage, and book services",
+    banner: project2Img,
+    component: Project2,
+    liveLink: "https://your-live-link.com",
+
+    description:
+      "A platform where users can add, manage, and book services. It supports dashboards, bookings, real-time updates, and more.",
+    features: [
+      "Service Management System",
+      "Role-based Dashboard",
+      "Status Tracking (Pending → Working → Completed)",
+      "Email/Google Authentication",
+    ],
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "MongoDB",
+      "Firebase",
+      "JWT",
+    ],
+  },
+  {
+    title: "Micro Freelance Platform",
+    subtitle: "Find freelancers for small tasks",
+    banner: project3Img,
+    component: Project3,
+    liveLink: "https://your-live-link.com",
+    repoLink: "https://github.com/your-repo",
+    description:
+      "A platform that helps individuals find freelancers for small tasks. Users can post tasks, bid, and connect based on skills, budget, and deadlines.",
+    features: [
+      "Task Posting & Bidding System",
+      "User Roles: Client and Freelancer",
+      "Skill Matching & Filtering",
+      "Live Chat",
+      "Stripe Payment Integration",
+    ],
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "MongoDB",
+      "Firebase",
+      "JWT",
+    ],
+  },
+];
 
 const Projects = () => {
-    return (
-        <section id='Projects' className="scroll-mt-24 bg-black font-rancho text-white py-10">
-            <h1 className="text-5xl text-center font-extrabold mb-14 text-white">Projects</h1>
+  const [activeProject, setActiveProject] = useState(null);
 
-            {/* Project 1 */}
-            <div className="px-6 md:px-14 mb-20">
-                <div className="flex flex-col md:flex-row items-center gap-10">
-                    {/* Swiper Section */}
-                    <div className="w-full md:w-[60%] bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 p-0.5 rounded-xl">
-                        <Swiper
-                            spaceBetween={30}
-                            navigation={true}
-                            loop={true}
-                            autoplay={{ delay: 2500, disableOnInteraction: false }}
-                            modules={[Navigation, Autoplay]}
-                            className="rounded-lg overflow-hidden"
-                        >
-                            {[1, 2, 3, 4, 5].map(num => (
-                                <SwiperSlide key={num}>
-                                    <img src={`/Project-2/img${num}.png`} alt={`Slide ${num}`} className="w-full h-auto object-cover" />
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    </div>
+  const ActiveComponent = activeProject ? activeProject.component : null;
 
-                    {/* Content Section */}
-                    <div className="w-full md:w-1/2 text-center md:text-left">
-                        <h2 className="text-3xl font-bold mb-3 text-purple-300">Micro Freelance Platform</h2>
-                        <p className="text-gray-300 mb-5 text-lg leading-relaxed">
-                            A platform that helps individuals find freelancers for small tasks. Users can post tasks, bid, and connect based on skills, budget, and deadlines.
-                        </p>
-                        <ul className="list-disc pl-6 text-base text-gray-400 space-y-2 mb-6 text-left">
-                            <li>Task Posting & Bidding System</li>
-                            <li>User Roles: Client and Freelancer</li>
-                            <li>Skill Matching & Filtering</li>
-                            <li>Live Chat</li>
-                            <li>Stripe Payment Integration</li>
-                        </ul>
+  return (
+    <section
+      id="Projects"
+      className="scroll-mt-24 bg-gradient-to-br from-gray-900 via-black bg-black text-white py-12 font-rancho"
+    >
+      {/* Title */}
+      <h1 className="text-4xl md:text-5xl text-center font-bold mb-8 flex items-center justify-center gap-3">
+        <span>    <FiFolder className="text-blue-500" size={36} /></span> My Projects
+      </h1>
 
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-base text-gray-300">
-                            {[{ Icon: FaReact, label: 'React', color: 'text-cyan-400' },
-                            { Icon: SiTailwindcss, label: 'Tailwind CSS', color: 'text-sky-400' },
-                            { Icon: FaNodeJs, label: 'Node.js', color: 'text-green-500' },
-                            { Icon: SiMongodb, label: 'MongoDB', color: 'text-green-400' },
-                            { Icon: SiFirebase, label: 'Firebase', color: 'text-yellow-400' },
-                            { Icon: SiJsonwebtokens, label: 'JWT', color: 'text-red-400' }
-                            ].map(({ Icon, label, color }) => (
-                                <div key={label} className="flex items-center space-x-2">
-                                    <Icon className={`${color} text-xl`} /> <span>{label}</span>
-                                </div>
-                            ))}
-                        </div>
+      {/* Card grid */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
+        {projects.map((proj, index) => (
+          <div
+            key={index}
+            className="bg-[#0b1220] rounded-xl overflow-hidden shadow-lg border border-gray-800 transform transition hover:-translate-y-2 flex flex-col"
+            style={{ minHeight: "330px" }}
+          >
+            <img
+              src={proj.banner}
+              alt={proj.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-5 flex flex-col justify-between flex-grow">
+              <div>
+                <h3 className="text-lg md:text-xl font-semibold mb-1 leading-tight">
+                  {proj.title}
+                </h3>
+                <p className="text-purple-400 italic text-sm mb-3 truncate">
+                  {proj.subtitle}
+                </p>
 
-                        <div className="flex flex-wrap gap-4 mt-6 justify-center md:justify-start">
-                            <a href="https://your-live-site.com" target="_blank" rel="noopener noreferrer"
-                                className="px-6 py-2 rounded text-white bg-purple-600 hover:bg-transparent hover:border hover:border-purple-500 hover:text-purple-400 transition duration-300">
-                                Live Site
-                            </a>
-                            <a href="https://github.com/yourusername/freelance-client" target="_blank" rel="noopener noreferrer"
-                                className="px-6 py-2 rounded text-white bg-gray-700 hover:bg-transparent hover:border hover:border-gray-500 hover:text-gray-300 transition duration-300">
-                                GitHub Client
-                            </a>
-                            <a href="https://github.com/yourusername/freelance-server" target="_blank" rel="noopener noreferrer"
-                                className="px-6 py-2 rounded text-white bg-gray-700 hover:bg-transparent hover:border hover:border-gray-500 hover:text-gray-300 transition duration-300">
-                                Details
-                            </a>
-                        </div>
-                    </div>
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-4 max-w-full overflow-hidden">
+                  {proj.technologies.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="text-xs flex items-center bg-gray-800 rounded-full px-2 py-1 select-none whitespace-nowrap"
+                    >
+                      {iconMap[tech]}
+                      <span className="max-w-[80px] truncate">{tech}</span>
+                    </span>
+                  ))}
                 </div>
+              </div>
+
+              <button
+                onClick={() => setActiveProject(proj)}
+                className="mt-auto w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition"
+              >
+                View Details →
+              </button>
             </div>
+          </div>
+        ))}
+      </div>
 
-            {/* Project 2 */}
-            <div className="px-6 md:px-14 mb-20">
-                <div className="flex flex-col md:flex-row-reverse items-center gap-10">
-                    {/* Swiper Section */}
-                    <div className="w-full md:w-[60%] border border-purple-500 p-0.5 rounded-xl">
-                        <Swiper
-                            spaceBetween={30}
-                            navigation={true}
-                            loop={true}
-                            autoplay={{ delay: 2500, disableOnInteraction: false }}
-                            modules={[Navigation, Autoplay]}
-                            className="rounded-lg overflow-hidden"
-                        >
-                            {[11, 12, 13, 14, 10, 18].map(num => (
-                                <SwiperSlide key={num}>
-                                    <img src={`/Project1/img${num}.png`} alt={`Slide ${num}`} className="w-full h-auto object-cover" />
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    </div>
+      {/* Modal */}
+      {activeProject && (
+        <dialog
+          id="projectModal"
+          className="modal modal-open"
+          style={{ padding: 0 }}
+        >
+          <div
+            className="modal-box w-full max-w-7xl max-h-[90vh] bg-[#0b1220] relative overflow-auto"
+          >
+            <form method="dialog">
+              <button
+                onClick={() => setActiveProject(null)}
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white"
+                aria-label="Close modal"
+              >
+                ✕
+              </button>
+            </form>
 
-                    {/* Content Section */}
-                    <div className="w-full md:w-1/2 text-center md:text-left">
-                        <h2 className="text-3xl font-bold mb-3 text-purple-300">Service Sharing Web Application</h2>
-                        <p className="text-gray-300 mb-5 text-lg leading-relaxed">
-                            A platform where users can add, manage, and book services. It supports dashboards, bookings, real-time updates, and more.
-                        </p>
-                        <ul className="list-disc pl-6 text-base text-gray-400 space-y-2 mb-6 text-left">
-                            <li>Service Management System</li>
-                            <li>Role-based Dashboard</li>
-                            <li>Status Tracking (Pending → Working → Completed)</li>
-                            <li>Email/Google Authentication</li>
-                        </ul>
-
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-base text-gray-300">
-                            {[{ Icon: FaReact, label: 'React', color: 'text-cyan-400' },
-                            { Icon: SiTailwindcss, label: 'Tailwind CSS', color: 'text-sky-400' },
-                            { Icon: FaNodeJs, label: 'Node.js', color: 'text-green-500' },
-                            { Icon: SiMongodb, label: 'MongoDB', color: 'text-green-400' },
-                            { Icon: SiFirebase, label: 'Firebase', color: 'text-yellow-400' },
-                            { Icon: SiJsonwebtokens, label: 'JWT', color: 'text-red-400' }
-                            ].map(({ Icon, label, color }) => (
-                                <div key={label} className="flex items-center space-x-2">
-                                    <Icon className={`${color} text-xl`} /> <span>{label}</span>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="flex flex-wrap gap-4 mt-6 justify-center md:justify-start">
-                            <a href="https://your-live-site.com" target="_blank" rel="noopener noreferrer"
-                                className="px-6 py-2 rounded text-white bg-purple-600 hover:bg-transparent hover:border hover:border-purple-500 hover:text-purple-400 transition duration-300">
-                                Live Site
-                            </a>
-                            <a href="https://github.com/yourusername/service-sharing-client" target="_blank" rel="noopener noreferrer"
-                                className="px-6 py-2 rounded text-white bg-gray-700 hover:bg-transparent hover:border hover:border-gray-500 hover:text-gray-300 transition duration-300">
-                                GitHub Client
-                            </a>
-                            <a href="https://github.com/yourusername/service-sharing-server" target="_blank" rel="noopener noreferrer"
-                                className="px-6 py-2 rounded text-white bg-gray-700 hover:bg-transparent hover:border hover:border-gray-500 hover:text-gray-300 transition duration-300">
-                                Details
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div className="text-white p-4">
+              {ActiveComponent && <ActiveComponent />}
             </div>
-        </section>
-    );
+          </div>
+        </dialog>
+      )}
+    </section>
+  );
 };
 
 export default Projects;

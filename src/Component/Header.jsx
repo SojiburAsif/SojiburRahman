@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaDownload, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const Header = () => {
   const [active, setActive] = useState('home');
@@ -23,11 +24,11 @@ const Header = () => {
 
   return (
     <header className="w-full bg-black fixed font-rancho top-0 left-0 z-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className=" mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="text-xl font-bold text-purple-400">
-            <img src="/Sojibur.png" alt="Logo" className="h-12 w-auto" />
+            <img src="/Blue & Black Globe Logo.png" alt="Logo" className="h-19 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
@@ -49,17 +50,23 @@ const Header = () => {
 
           {/* CV Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            <a
-              href="/your-cv.pdf"
-              download
-              className="text-sm font-semibold text-purple-400 border border-purple-500 px-4 py-1.5 rounded hover:bg-purple-600/10 transition-all"
-            >
-              Download CV
-            </a>
+            <Link href="/your-cv.pdf" passHref>
+              <a
+                download
+                className="flex items-center space-x-2 text-sm font-semibold text-white  px-4 py-1.5 rounded hover:bg-gray-900 border border-purple-500 transition-all"
+              >
+                <FaDownload className="w-4 h-4 text-purple-500" />
+                <span>Download CV</span>
+              </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="lg:hidden text-white text-2xl cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+          <div
+            className="lg:hidden text-white text-2xl cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          >
             {isOpen ? <FaTimes /> : <FaBars />}
           </div>
         </div>
@@ -67,9 +74,8 @@ const Header = () => {
 
       {/* Mobile Side Drawer Menu */}
       <div
-        className={`lg:hidden fixed top-20 right-0 w-3/4 max-w-xs h-full bg-black z-40 shadow-lg border-l border-purple-900 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`lg:hidden fixed top-20 right-0 w-3/4 max-w-xs h-full bg-black z-40 shadow-lg border-l border-purple-900 transform transition-transform duration-300 ease-in-out
+          ${isOpen ? 'translate-x-0 opacity-100 pointer-events-auto' : 'translate-x-full opacity-0 pointer-events-none'}`}
       >
         <div className="flex flex-col items-start px-6 py-8 space-y-6">
           {links.map((link) => (
@@ -77,9 +83,8 @@ const Header = () => {
               key={link.id}
               href={link.href}
               onClick={() => handleClick(link.id)}
-              className={`block w-full text-lg font-medium transition-all duration-200 ${
-                active === link.id ? 'text-purple-400' : 'text-gray-300 hover:text-purple-400'
-              }`}
+              className={`block w-full text-lg font-medium transition-all duration-200 ${active === link.id ? 'text-purple-400' : 'text-gray-300 hover:text-purple-400'
+                }`}
             >
               {link.label}
             </a>
@@ -87,7 +92,7 @@ const Header = () => {
           <a
             href="/your-cv.pdf"
             download
-            className="mt-4 inline-block text-sm font-semibold text-purple-400 border border-purple-500 px-4 py-1.5 rounded hover:bg-purple-600/10 transition-all"
+            className="mt-4 inline-block text-sm font-semibold   px-4 py-1.5 rounded hover:bg-purple-600/10 transition-all"
           >
             Download CV
           </a>

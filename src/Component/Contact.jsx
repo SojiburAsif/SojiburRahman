@@ -7,6 +7,7 @@ import {
     FaTwitter,
     FaTiktok,
     FaWhatsapp,
+    FaReact,
 } from "react-icons/fa";
 
 const ContactSection = () => {
@@ -14,7 +15,8 @@ const ContactSection = () => {
         <div id="Contact" className="py-16 bg-black font-rancho text-white">
 
             {/* Title centered at the top */}
-            <h1 className="text-5xl font-bold text-white text-center mb-18">
+            <h1 className="flex items-center justify-center text-5xl font-bold text-white text-center mb-18 gap-3">
+                <FaReact className="text-blue-400" size={48} />
                 Contact
             </h1>
 
@@ -22,7 +24,7 @@ const ContactSection = () => {
                 <div className="flex flex-col lg:flex-row gap-10">
 
                     {/* Left: Contact Info */}
-                    <div  className="lg:w-1/2 space-y-6" >
+                    <div className="lg:w-1/2 space-y-6" >
 
                         <h2 className="text-3xl font-semibold text-purple-500">Contact Information</h2>
 
@@ -33,7 +35,7 @@ const ContactSection = () => {
 
                         <p className="flex items-center text-lg">
                             <FaPhone className="text-purple-600 mr-3 text-2xl" />
-                            01840587095
+                            +8801840587095
                         </p>
 
                         <p className="flex items-center text-lg">
@@ -51,7 +53,7 @@ const ContactSection = () => {
                         {/* Social Icons */}
                         <div className="flex gap-6 mt-4 text-3xl text-gray-400">
                             <a
-                                href="https://github.com/yourusername"
+                                href="https://github.com/sojiburAsif"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-purple-500 transition"
@@ -77,15 +79,7 @@ const ContactSection = () => {
                             >
                                 <FaTwitter />
                             </a>
-                            <a
-                                href="https://www.tiktok.com/@sojiburrahmanasif?is_from_webapp=1&sender_device=pc"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-purple-500 transition"
-                                aria-label="TikTok"
-                            >
-                                <FaTiktok />
-                            </a>
+                           
                         </div>
 
                         <a

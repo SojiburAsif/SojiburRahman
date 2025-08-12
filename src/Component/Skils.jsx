@@ -18,6 +18,7 @@ import {
   SiFirebase,
   SiReactrouter,
 } from 'react-icons/si';
+import { FiLayers } from 'react-icons/fi';
 
 // Frontend Skills
 const frontendSkills = [
@@ -94,7 +95,10 @@ const SkillsSection = ({ title, skills }) => {
 const Skills = () => {
   return (
     <section id="Skills" className="py-12 font-rancho bg-black text-white px-4 sm:px-6 md:px-12 lg:px-20">
-      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-14">My Skills</h2>
+     <h2 className="flex items-center justify-center text-3xl sm:text-4xl font-bold text-center mb-14 gap-3">
+  <FiLayers className="text-blue-500 animate-pulse" size={38} />
+  My Skills
+</h2>
       <div className="max-w-7xl mx-auto space-y-16">
         <SkillsSection title="Frontend" skills={frontendSkills} />
         <SkillsSection title="Backend" skills={backendSkills} />

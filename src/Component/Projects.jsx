@@ -166,7 +166,7 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Modal */}
+    
       {activeProject && (
         <dialog
           id="projectModal"

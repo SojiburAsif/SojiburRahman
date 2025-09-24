@@ -55,8 +55,8 @@ const PortfolioBanner = () => {
             <Typewriter
               words={[
                 "MERN Stack Developer",
-                "Web Application Engineer",
-                "Full-Stack JavaScript Developer",
+                "Web Application Developer",
+                
               ]}
               loop
               cursor
@@ -106,7 +106,7 @@ const PortfolioBanner = () => {
           </motion.div>
 
           <motion.a
-            href="/your-resume.pdf"
+            href="/SojiburAsif-Resume.pdf"
             download
             className="inline-flex items-center space-x-2 mt-4 px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded text-white font-medium transition w-full md:w-[40%] lg:w-[39%] text-base md:text-lg lg:text-sm"
             initial={{ opacity: 0, y: 20 }}

@@ -8,7 +8,7 @@ const Header = () => {
 
   const handleClick = (id) => {
     setActive(id);
-    setIsOpen(false); // close mobile menu after clicking
+    setIsOpen(false); 
   };
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const Header = () => {
 
           {/* CV Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link href="/your-cv.pdf" passHref>
+            <Link href="/SojiburAsif-Resume.pdff" passHref>
               <a
                 download
                 className="flex items-center space-x-2 text-sm font-semibold text-white  px-4 py-1.5 rounded hover:bg-gray-900 border border-purple-500 transition-all"

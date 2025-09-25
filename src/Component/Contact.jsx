@@ -90,8 +90,6 @@ const ContactSection = () => {
                             Download CV
                         </a>
                     </div>
-
-                    {/* Right: Contact Form */}
                     {/* Right: Contact Form */}
                     <div className="lg:w-1/2">
                         <form className="space-y-5">

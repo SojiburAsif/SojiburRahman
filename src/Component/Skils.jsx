@@ -38,13 +38,13 @@ const backendSkills = [
   { name: 'Firebase', icon: <SiFirebase className="text-yellow-500" /> },
 ];
 
-// Tools
+
 const tools = [
   { name: 'Git', icon: <FaGitAlt className="text-red-500" /> },
   { name: 'GitHub', icon: <FaGithub className="text-white" /> },
 ];
 
-// Variants for container and items
+
 const containerVariants = {
   hidden: {},
   visible: {

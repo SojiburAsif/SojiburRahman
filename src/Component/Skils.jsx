@@ -30,7 +30,7 @@ const frontendSkills = [
   { name: 'React Router', icon: <SiReactrouter className="text-pink-500" /> },
 ];
 
-// Backend Skills
+
 const backendSkills = [
   { name: 'Node.js', icon: <FaNode className="text-green-600" /> },
   { name: 'Express.js', icon: <SiExpress className="text-gray-200" /> },

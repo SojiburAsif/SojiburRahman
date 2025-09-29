@@ -20,7 +20,7 @@ import {
 } from 'react-icons/si';
 import { FiLayers } from 'react-icons/fi';
 
-// Frontend Skills
+
 const frontendSkills = [
   { name: 'React.js', icon: <FaReact className="text-cyan-400" /> },
   { name: 'JavaScript', icon: <FaJsSquare className="text-yellow-400" /> },

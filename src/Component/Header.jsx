@@ -8,7 +8,7 @@ const Header = () => {
 
   const handleClick = (id) => {
     setActive(id);
-    setIsOpen(false); 
+    setIsOpen(false);
   };
 
   useEffect(() => {
@@ -50,16 +50,16 @@ const Header = () => {
 
           {/* CV Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link href="/SojiburAsif-Resume.pdff" passHref>
-              <a
-                download
-                className="flex items-center space-x-2 text-sm font-semibold text-white  px-4 py-1.5 rounded hover:bg-gray-900 border border-purple-500 transition-all"
-              >
-                <FaDownload className="w-4 h-4 text-purple-500" />
-                <span>Download CV</span>
-              </a>
-            </Link>
+            <a
+              href="/SojiburAsif.CV (3).pdf"
+              download
+              className="flex items-center space-x-2 text-sm font-semibold text-white px-4 py-1.5 rounded hover:bg-gray-900 border border-purple-500 transition-all"
+            >
+              <FaDownload className="w-4 h-4 text-purple-500" />
+              <span>Download CV</span>
+            </a>
           </div>
+
 
           {/* Mobile Menu Toggle */}
           <div

@@ -83,7 +83,7 @@ const ContactSection = () => {
                         </div>
 
                         <a
-                            href="/img/DSC_0006.JPG"
+                            href="/SojiburAsif.CV (3).pdf"
                             download
                             className="inline-block mt-6 px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded text-white font-medium transition"
                         >
